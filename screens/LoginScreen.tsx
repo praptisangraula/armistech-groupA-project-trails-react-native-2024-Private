@@ -1,5 +1,7 @@
 // screens/LoginScreen.tsx
 import React, { useState } from 'react';
+import { Stack } from 'expo-router';
+
 import {
   StyleSheet,
   View,
@@ -21,18 +23,18 @@ const LoginScreen: React.FC = () => {
   const router = useRouter();
 
   const handleSignUp = () => {
-    router.push('/(auth)/signup');
+    router.push('/signup');
   };
 
-  const handleLogin = () => {
-    // Add your login logic here
-    console.log('Login pressed');
-  };
+const handleLogin = () => {
+  console.log('Login pressed');
+  router.push('/explore');  // No group prefix, just the route name
+};
 
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <ImageBackground
-        source={require('../assets/images/Signupbg.png')}
+        source={require('../assets/images/Loginbg.jpeg')}
         style={styles.backgroundImage}
       >
         <SafeAreaView style={styles.container}>
@@ -42,9 +44,9 @@ const LoginScreen: React.FC = () => {
           >
             <View style={styles.formContainer}>
               <View style={styles.titleContainer}>
-                <Text style={styles.titleText}>Start Your </Text>
-                <Text style={styles.journeyText}>Journey</Text>
-                <Text style={styles.titleText}> With Us!!!</Text>
+                <Text style={styles.titleText}>Start your </Text>
+                <Text style={styles.journeyText}>journey</Text>
+                <Text style={styles.titleText}> With us</Text>
               </View>
 
               <TextInput

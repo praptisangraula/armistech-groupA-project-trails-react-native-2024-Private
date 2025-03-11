@@ -40,7 +40,7 @@ const SignUpScreen: React.FC = () => {
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <ImageBackground
-        source={require('../assets/images/Signupbg.png')}
+        source={require('../assets/images/Signupbg.jpg')}
         style={styles.backgroundImage}
       >
         <SafeAreaView style={styles.container}>
