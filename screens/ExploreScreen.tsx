@@ -1,4 +1,3 @@
-// screens/ExploreScreen.tsx
 import React, { useState } from 'react';
 import BottomNavBar from '@/components/BottomNavBar';
 import {
@@ -133,7 +132,7 @@ const ExploreScreen: React.FC = () => {
 
   const handleSearch = (text: string) => {
     setSearchQuery(text);
-    // Implement search functionality here
+    
   };
 
   return (

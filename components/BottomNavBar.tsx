@@ -1,18 +1,14 @@
-// components/BottomNavBar.tsx
 import React from 'react';
 import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 import { useRouter, usePathname } from 'expo-router';
 import { Feather } from '@expo/vector-icons';
 
 interface BottomNavBarProps {
-  // You can add any additional props if needed
 }
 
 const BottomNavBar: React.FC<BottomNavBarProps> = () => {
   const router = useRouter();
   const pathname = usePathname();
-
-  // Function to check if a route is active
   const isActive = (route: string) => pathname === route;
 
   return (
@@ -38,17 +34,17 @@ const BottomNavBar: React.FC<BottomNavBarProps> = () => {
 
       <TouchableOpacity 
         style={styles.navButton} 
-        onPress={() => router.replace('/' as any)}
+        onPress={() => router.replace('/home' as any)}
       >
         <Feather 
           name="home" 
           size={24} 
-          color={isActive('/') ? '#2F6F6F' : '#666'} 
+          color={isActive('/home') ? '#2F6F6F' : '#666'} 
         />
         <Text 
           style={[
             styles.navText, 
-            isActive('/') && styles.activeNavText
+            isActive('/home') && styles.activeNavText
           ]}
         >
           Home
@@ -74,24 +70,7 @@ const BottomNavBar: React.FC<BottomNavBarProps> = () => {
         </Text>
       </TouchableOpacity>
 
-      <TouchableOpacity 
-        style={styles.navButton} 
-        onPress={() => router.replace('/trips' as any)}
-      >
-        <Feather 
-          name="map" 
-          size={24} 
-          color={isActive('/trips') ? '#2F6F6F' : '#666'} 
-        />
-        <Text 
-          style={[
-            styles.navText, 
-            isActive('/trips') && styles.activeNavText
-          ]}
-        >
-          Trips
-        </Text>
-      </TouchableOpacity>
+      
 
       <TouchableOpacity 
         style={styles.navButton} 

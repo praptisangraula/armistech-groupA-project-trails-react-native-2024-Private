@@ -1,4 +1,3 @@
-// screens/LoginScreen.tsx
 import React, { useState } from 'react';
 import { Stack } from 'expo-router';
 
@@ -28,7 +27,7 @@ const LoginScreen: React.FC = () => {
 
 const handleLogin = () => {
   console.log('Login pressed');
-  router.push('/explore');  // No group prefix, just the route name
+  router.push('/explore');  
 };
 
   return (

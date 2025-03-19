@@ -1,4 +1,3 @@
-// screens/SignUpScreen.tsx
 import React, { useState } from 'react';
 import {
   StyleSheet,
@@ -28,13 +27,11 @@ const SignUpScreen: React.FC = () => {
   };
 
   const handleSignUp = () => {
-    // Add your signup logic here
     console.log('Sign up pressed');
   };
 
-  const handleGoogleSignUp = () => {
-    // Add your Google signup logic here
-    console.log('Google sign up pressed');
+  const handleLoginNavigation = () => {
+    router.push('/login'); // Navigate to login screen
   };
 
   return (
@@ -102,9 +99,10 @@ const SignUpScreen: React.FC = () => {
                 <View style={styles.orLine} />
               </View>
 
-              <TouchableOpacity style={styles.googleButton} onPress={handleGoogleSignUp}>
-                <Text style={styles.googleButtonText}>Sign Up With Google</Text>
+              <TouchableOpacity style={styles.loginButton} onPress={handleLoginNavigation}>
+                <Text style={styles.loginButtonText}> Log in instead</Text>
               </TouchableOpacity>
+
             </View>
           </KeyboardAvoidingView>
         </SafeAreaView>
@@ -196,14 +194,14 @@ const styles = StyleSheet.create({
     marginHorizontal: 10,
     color: '#666',
   },
-  googleButton: {
+  loginButton: {
     borderWidth: 1,
     borderColor: '#ddd',
     borderRadius: 10,
     padding: 15,
     alignItems: 'center',
   },
-  googleButtonText: {
+  loginButtonText: {
     color: '#2F6F6F',
     fontSize: 16,
     fontWeight: '600',
