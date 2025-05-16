@@ -1,5 +1,5 @@
-import { Stack } from 'expo-router';
-import { StatusBar } from 'expo-status-bar';
+import { Stack } from "expo-router";
+import { StatusBar } from "expo-status-bar";
 
 export default function Layout() {
   return (
@@ -15,6 +15,11 @@ export default function Layout() {
         <Stack.Screen name="profile" />
         <Stack.Screen name="editProfile" />
         <Stack.Screen name="trips" />
+        <Stack.Screen name="admin" />
+        <Stack.Screen name="admin-users" />
+        <Stack.Screen name="admin-trails" />
+        <Stack.Screen name="admin-reviews" />
+        <Stack.Screen name="admin-settings" />
       </Stack>
     </>
   );

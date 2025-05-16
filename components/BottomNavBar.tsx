@@ -1,10 +1,9 @@
-import React from 'react';
-import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
-import { useRouter, usePathname } from 'expo-router';
-import { Feather } from '@expo/vector-icons';
+import React from "react";
+import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
+import { useRouter, usePathname } from "expo-router";
+import { Feather } from "@expo/vector-icons";
 
-interface BottomNavBarProps {
-}
+interface BottomNavBarProps {}
 
 const BottomNavBar: React.FC<BottomNavBarProps> = () => {
   const router = useRouter();
@@ -13,79 +12,78 @@ const BottomNavBar: React.FC<BottomNavBarProps> = () => {
 
   return (
     <View style={styles.bottomNav}>
-      <TouchableOpacity 
-        style={styles.navButton} 
-        onPress={() => router.replace('/explore' as any)}
+      {" "}
+      <TouchableOpacity
+        style={styles.navButton}
+        onPress={() => router.push("/explore")}
       >
-        <Feather 
-          name="search" 
-          size={24} 
-          color={isActive('/explore') ? '#2F6F6F' : '#666'} 
+        <Feather
+          name="search"
+          size={24}
+          color={isActive("/explore") ? "#2F6F6F" : "#666"}
         />
-        <Text 
-          style={[
-            styles.navText, 
-            isActive('/explore') && styles.activeNavText
-          ]}
+        <Text
+          style={[styles.navText, isActive("/explore") && styles.activeNavText]}
         >
           Explore
         </Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity 
-        style={styles.navButton} 
-        onPress={() => router.replace('/home' as any)}
+      </TouchableOpacity>{" "}
+      <TouchableOpacity
+        style={styles.navButton}
+        onPress={() => router.push("/home")}
       >
-        <Feather 
-          name="home" 
-          size={24} 
-          color={isActive('/home') ? '#2F6F6F' : '#666'} 
+        <Feather
+          name="home"
+          size={24}
+          color={isActive("/home") ? "#2F6F6F" : "#666"}
         />
-        <Text 
-          style={[
-            styles.navText, 
-            isActive('/home') && styles.activeNavText
-          ]}
+        <Text
+          style={[styles.navText, isActive("/home") && styles.activeNavText]}
         >
           Home
         </Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity 
-        style={styles.navButton} 
-        onPress={() => router.replace('/saved' as any)}
+      </TouchableOpacity>{" "}
+      <TouchableOpacity
+        style={styles.navButton}
+        onPress={() => router.push("/saved")}
       >
-        <Feather 
-          name="heart" 
-          size={24} 
-          color={isActive('/saved') ? '#2F6F6F' : '#666'} 
+        <Feather
+          name="heart"
+          size={24}
+          color={isActive("/saved") ? "#2F6F6F" : "#666"}
         />
-        <Text 
-          style={[
-            styles.navText, 
-            isActive('/saved') && styles.activeNavText
-          ]}
+        <Text
+          style={[styles.navText, isActive("/saved") && styles.activeNavText]}
         >
           Saved
         </Text>
       </TouchableOpacity>
-
-      
-
-      <TouchableOpacity 
-        style={styles.navButton} 
-        onPress={() => router.replace('/profile' as any)}
+      <TouchableOpacity
+        style={styles.navButton}
+        onPress={() => router.push("/admin")}
       >
-        <Feather 
-          name="user" 
-          size={24} 
-          color={isActive('/profile') ? '#2F6F6F' : '#666'} 
+        <Feather
+          name="shield"
+          size={24}
+          color={isActive("/admin") ? "#2F6F6F" : "#666"}
         />
-        <Text 
-          style={[
-            styles.navText, 
-            isActive('/profile') && styles.activeNavText
-          ]}
+        <Text
+          style={[styles.navText, isActive("/admin") && styles.activeNavText]}
+        >
+          Admin
+        </Text>
+      </TouchableOpacity>{" "}
+      <TouchableOpacity
+        style={styles.navButton}
+        onPress={() => router.push("/profile")}
+      >
+        <Feather
+          name="user"
+          size={24}
+          color={isActive("/profile") ? "#2F6F6F" : "#666"}
+        />
+        <Text
+          style={[styles.navText, isActive("/profile") && styles.activeNavText]}
         >
           Profile
         </Text>
@@ -96,28 +94,28 @@ const BottomNavBar: React.FC<BottomNavBarProps> = () => {
 
 const styles = StyleSheet.create({
   bottomNav: {
-    position: 'absolute',
+    position: "absolute",
     bottom: 0,
     left: 0,
     right: 0,
-    flexDirection: 'row',
-    backgroundColor: 'white',
+    flexDirection: "row",
+    backgroundColor: "white",
     height: 60,
-    justifyContent: 'space-around',
-    alignItems: 'center',
+    justifyContent: "space-around",
+    alignItems: "center",
     borderTopWidth: 1,
-    borderTopColor: '#eee',
+    borderTopColor: "#eee",
   },
   navButton: {
-    alignItems: 'center',
+    alignItems: "center",
   },
   navText: {
     fontSize: 12,
     marginTop: 2,
-    color: '#666',
+    color: "#666",
   },
   activeNavText: {
-    color: '#2F6F6F',
+    color: "#2F6F6F",
   },
 });
 
